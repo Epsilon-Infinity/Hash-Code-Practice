@@ -10,10 +10,10 @@ sudo apt-get install -y git pkg-config coinor-libcbc-dev coinor-libosi-dev coino
 CBC_ADDLIBS="/usr/share/coin/doc/Cbc/cbc_addlibs.txt"
 
 # If it does not exist,
-if [[ ! (-f "$CBC_ADDLIBS") ]]; then
+if [ ! -f "$CBC_ADDLIBS" ]; then
 
     # Clone the Cbc repository
-    if [[ ! (-d "Cbc/") ]]; then
+    if [ ! -d "Cbc/" ]; then
         git clone https://github.com/coin-or/Cbc.git Cbc/
     fi
 
