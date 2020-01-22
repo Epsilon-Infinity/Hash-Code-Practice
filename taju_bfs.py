@@ -12,16 +12,13 @@ def solver(paticipants, pizas):
         s = sum(pizs)
         if s <= paticipants:
             if s > acc[1]:
-              acc[1] = s
-              acc[0] = pizs
+              acc[0], acc[1] = pizs, s
               print('Found :', s)
             return
         for j in range(len(pizs)):
             solve(pizs[0:j] + pizs[j+1:])
-            if acc[1] == paticipants:
-                break
+            if acc[1] == paticipants: break
     solve(pizas)
-    print('************** Solution *************')
     return [pizas_key[v].pop(0) for v in acc[0]]
 
 if __name__=="__main__":
