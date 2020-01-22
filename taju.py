@@ -1,11 +1,12 @@
 import os
 import util
 from copy import deepcopy
+import numpy as np
 
 def solver(paticipants, pizas):
     pizas_key = {v:i for i, v in enumerate(pizas)}
     acc = [[], 0]
-    print('File loaded :: %s, %d ' % (len(pizas), paticipants))
+    print('File loaded :: size of piza : %s, paticipants : %d ' % (len(pizas), paticipants))
     def solve(piza_idx, pizs):
         s = sum(pizs)
         if s <= paticipants:
